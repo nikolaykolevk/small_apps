@@ -1,0 +1,16 @@
+.promotionItemImage, .newItemImage {
+	height: 40vw;
+}
+
+.cartProductImage {
+	height: 20vh;
+}
+
+#cartBody {
+	max-height: 350px;
+	overflow: scroll;
+}
+
+div.contentPage {
+	min-height: 60vh;
+}

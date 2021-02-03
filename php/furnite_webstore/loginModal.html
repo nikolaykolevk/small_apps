@@ -1,0 +1,93 @@
+<script>
+		$('#loginModal').on('show.bs.modal', function(event) {
+			var button = $(event.relatedTarget)
+			var modal = $(this)
+		})
+	</script>
+<div ng-app="authorizeApp" ng-controller="authorizeCtrl">
+	<div class="modal fade" id="loginModal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 ng-hide="func" class="modal-title">Вход</h5>
+					<h5 ng-show="func" class="modal-title">Регистрация</h5>
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+				</div>
+				<div ng-hide="func">
+					<div class="modal-body">
+							<div class="form-group">
+								<label for="username" class="col-form-label">Потребителско
+									Име:</label> <input ng-model="username" type="text"
+									class="form-control" id="username">
+							</div>
+							<div class="form-group">
+								<label for="password" class="col-form-label">Парола:</label> <input
+									ng-model="password" type="password" class="form-control"
+									id="password"></input>
+							</div>
+						<h1>{{ tmp }}</h1>
+					</div>
+				</div>
+				<div ng-show="func">
+						<div class="form-inline my-3">
+
+							<input type="text" placeholder="Потребителско Име"
+								ng-model="username"
+								oninvalid="this.setCustomValidity('Моля попълнете правилно полето')"
+								oninput="setCustomValidity('')" required
+								class="form-control col-10 mx-auto">
+						</div>
+						<div class="form-inline my-3">
+							<input type="password" placeholder="парола" ng-model="password"
+								oninvalid="this.setCustomValidity('Моля попълнете правилно полето')"
+								oninput="setCustomValidity('')" required
+								class="form-control col-10 mx-auto">
+						</div>
+						<div class="form-inline my-3">
+							<input type="text" placeholder="email" ng-model="email"
+								oninvalid="this.setCustomValidity('Моля попълнете правилно полето')"
+								oninput="setCustomValidity('')" required
+								class="form-control col-10 mx-auto">
+						</div>
+						<div class="form-inline my-3">
+							<input type="tel" placeholder="телефон" ng-model="phone"
+								oninvalid="this.setCustomValidity('Моля попълнете правилно полето')"
+								oninput="setCustomValidity('')" required
+								class="form-control col-10 mx-auto">
+						</div>
+					<h1>{{ tmp }}</h1>
+					<h1></h1>
+				</div>
+				<div class="modal-footer">
+					<button ng-show="func" ng-click="func=0" class="mr-auto btn btn-dark">Имаш Акаунт</button>
+					<button ng-hide="func" ng-click="func=1" class="mr-auto btn btn-dark">Регистрирай се </button>
+					<button data-dismiss="modal" ng-click="authorize()" class="btn btn-primary">готово</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+var app = angular.module('authorizeApp', []);
+app.controller('authorizeCtrl', function($scope, $http) {
+	$scope.func=0;
+	data = {};
+	
+	$scope.authorize = function () {
+		data.username=$scope.username;
+		data.password=$scope.password;
+		data.func=$scope.func;
+		if ($scope.func = 1) {
+		data.email=$scope.email;
+		data.phone=$scope.phone;
+		}
+		$http.post("authorize.php", JSON.stringify(data))
+	  .then(function(response) {
+	    $scope.tmp = response.data;
+	  });
+	}
+	});
+</script>

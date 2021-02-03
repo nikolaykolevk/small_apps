@@ -1,0 +1,20 @@
+Your car: Mercedes
+Paint: red
+Top speed: 149,96 km/h
+Braking distance: 112,44 m
+HP: 781
+Weight: 1464,00 kg
+Price: 154820,00 $
+Efficiency: 25,50 l/100km
+
+
+Your car: Audi
+Paint: red
+Top speed: 188,80 km/h
+Braking distance: 178,23 m
+HP: 781
+Weight: 1843,20 kg
+Price: 147980,00 $
+Efficiency: 25,50 l/100km
+
+
