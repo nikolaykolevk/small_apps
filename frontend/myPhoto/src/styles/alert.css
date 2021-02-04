@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+
+.alert-minimize {
+width: 80px;
+}
+.alert-minimize * {
+display: none;
+}
+.alert-minimize .close {
+display: block;
+}

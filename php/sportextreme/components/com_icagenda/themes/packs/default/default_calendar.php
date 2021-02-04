@@ -1,0 +1,35 @@
+<?php
+/**
+ *----------------------------------------------------------------------------
+ * iCagenda     Events Management Extension for Joomla!
+ *----------------------------------------------------------------------------
+ * @version     3.6.14 2018-05-04
+ *
+ * @package     iCagenda.Site
+ * @subpackage  Themes.Packs
+ * @link        https://icagenda.joomlic.com
+ *
+ * @author      Cyril Rezé
+ * @copyright   (c) 2012-2019 Jooml!C / Cyril Rezé. All rights reserved.
+ * @license     GNU General Public License version 3 or later; see LICENSE.txt
+ *
+ * @since       1.0
+ *----------------------------------------------------------------------------
+ * @themepack   default
+ * @template    calendar
+ *----------------------------------------------------------------------------
+*/
+
+defined('_JEXEC') or die;
+?>
+
+<!-- Calendar -->
+
+<?php // Code can be added at Top of calendar ?>
+
+<?php // Calendar Template ?>
+<?php
+	$stamp->days();
+?>
+
+<?php // Code can be added at Bottom of calendar ?>

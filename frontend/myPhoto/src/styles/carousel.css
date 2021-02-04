@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+.modal-dialog {
+	width: 90%;
+	max-width: 90%;
+}
+
+.carousel-modal img {
+width: 100%;
+}

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pickup BG - Пикапи под наем на изгодни цени</title>
+<link rel="stylesheet" href="src/css/bootstrap.min.css">
+<link rel="stylesheet" href="src/css/hover-min.css">
+<link rel="stylesheet" href="src/css/lightbox.css">
+<link rel="stylesheet" href="src/css/animate.min.css">
+<script src="src/js/jquery.min.js"></script>
+<script src="src/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="src/css/style.css">
+
+<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+						$(
+								"nav div ul li a, #navbar > a, a.contentLinks, div > div > div > a")
+								.on('click', function(evt) {
+									evt.preventDefault();
+									$('html, body').animate({
+										scrollTop : $(this.hash).offset().top
+									}, 500);
+								});
+
+					});
+</script>
+
+<script>
+	$(document).ready(
+			function() {
+				$("[data-monitor], #technologyQuests > div > div > button").on(
+						'click',
+						function() {
+							$("#technologies > div.container > ul > li > a")
+									.removeClass("active");
+							$(
+									"#technologies > div.container > ul > li > a[href='#"
+											+ $(this).attr("data-monitor")
+											+ "']").addClass("active");
+							$("#technologies > div.container > div > div")
+									.removeClass("active show");
+							$("#" + $(this).attr("data-monitor")).addClass(
+									"active show");
+						});
+			});
+</script>
+
+<script>
+	$(document).ready(function() {
+		$("[data-answer]").on('click', function() {
+			if ($(this).attr("data-answer") == 1) {
+				$(this).removeClass("bg-light");
+				$(this).addClass("bg-success");
+			} else {
+				$(this).removeClass("bg-light");
+				$(this).addClass("bg-danger");
+			}
+		});
+	});
+</script>
+
+</head>
+<body data-spy="scroll" data-target="#navbar" class="animated fadeIn">
+	<nav class="navbar navbar-expand-lg navbar-pickup fixed-top "
+		id="navbar">
+		<a class="navbar-brand" href="#welcome"><img height="36px"
+			width="36px" src="src/fonts/logo.svg"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<img height="30px" width="30px" src="src/fonts/menu.svg">
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav w-100">
+				<li class="nav-item ml-lg-auto"><a
+					class="nav-link hvr-underline-from-center" href="#prices"> Цени</a></li>
+				<li class="nav-item mx-lg-2"><a
+					class="nav-link hvr-underline-from-center" href="#cars">
+						Автомобили</a></li>
+				<li class="nav-item mx-lg-2"><a
+					class="nav-link hvr-underline-from-center" href="#questions">
+						Въпроси</a></li>
+				<li class="nav-item mr-auto"><a
+					class="nav-link hvr-underline-from-center" href="#contacts">
+						Контакти</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- HOME -->
+	<div class="container-fluid pickup-section bg-pickup-welcome"
+		id="welcome">
+		<div class="anchorBreak"></div>
+		<div class="container mt-5">
+			<div class="jumbotron text-center bg-dark text-light">
+				<h1 class="display-3">PickupBG</h1>
+				<p>Пикапи под наем на изгодни цени</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 	Table Of Contents -->
+
+	<!-- 	<div
+		class="container-fluid pickup-section bg-pickup-dark border border-dark"
+		id="content">
+		<div class="anchorBreak"></div>
+		<div class="bg-pickup-light mt-4 p-3 row w-75 mx-auto row">
+			<h3 class="display-4 text-center col-12">За Нас</h3>
+
+		</div>
+	</div>
+	
+-->
+
+	<!-- 	Interfaces -->
+	<div class="container-fluid pickup-section bg-pickup-light"
+		id="prices">
+		<div class="anchorBreak"></div>
+		<h1 class="display-3 mt-2 text-center">Цени</h1>
+		<div class="container">
+			<table class="table table-striped text-center">
+				<thead>
+					<tr>
+						<th class="align-middle">За</th>
+						<th class="align-middle">Пикап 1</th>
+						<th class="align-middle">Пикап 2</th>
+						<th class="align-middle">Пикап 3</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><b>1 час</b></td>
+						<td>30лв</td>
+						<td>40лв</td>
+						<td>50лв</td>
+					</tr>
+					<tr>
+						<td><b>2 час</b></td>
+						<td>50лв</td>
+						<td>70лв</td>
+						<td>90лв</td>
+					</tr>
+					<tr>
+						<td><b>4 час</b></td>
+						<td>140лв</td>
+						<td>130лв</td>
+						<td>170лв</td>
+					</tr>
+					<tr>
+						<td><b>Цял ден</b></td>
+						<td>300лв</td>
+						<td>350лв</td>
+						<td>400лв</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+		<hr>
+		<br> <br>
+	</div>
+
+
+	<!-- 	cars -->
+
+	<div class="container-fluid pickup-section bg-dark" id="cars">
+		<div class="anchorBreak"></div>
+		<h1 class="display-3 mt-3 text-center text-light">Автомобили</h1>
+		<div class="container">
+
+			<ul class="nav nav-tabs nav-fill">
+				<li class="nav-item"><a class="nav-link active"
+					data-toggle="tab" href="#pickup1">Пикап 1</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab"
+					href="#pickup2">Пикап 2</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab"
+					href="#pickup3">Пикап 3</a></li>
+			</ul>
+
+			<div class="tab-content">
+
+				<!-- 			Pickup 1 -->
+				<div id="pickup1" class="tab-pane fade bg-pickup-light active show">
+					<div class="container-fluid w-75">
+
+						<h3 class="contentAnchor text-center">
+							<b>Chevrolet Silverado 2500</b>
+						</h3>
+
+
+
+						<div class="row my-3">
+							<a class="text-center" href="src/images/pickup1.jpg"
+								data-lightbox="plasma1" data-title="Plasma"><img
+								class="img-fluid w-75" src="src/images/pickup1.jpg"></a>
+						</div>
+						<div class="my-3 mx-auto row">
+							<a class="text-center col" href="src/images/pickup1-1.jpg"
+								data-lightbox="plasma1" data-title="Plasma"><img
+								class="img-fluid" src="src/images/pickup1-1.jpg"></a> <a
+								class="text-center col" href="src/images/pickup1-2.jpg"
+								data-lightbox="plasma1" data-title="Plasma"><img
+								class="img-fluid" src="src/images/pickup1-2.jpg"></a>
+						</div>
+						<hr>
+						<br>
+
+
+						<ul class="list-group mx-auto text-center">
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">Най-бюджетният
+								вариант.</li>
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">Възможност
+								за товар до 600кг</li>
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">Бърз</li>
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">5
+								места за пътници</li>
+						</ul>
+
+						<br> <br> <br>
+
+
+					</div>
+
+
+
+				</div>
+
+
+				<!-- 				Pickup 2 -->
+				<div id="pickup2" class="tab-pane fade bg-pickup-light">
+					<div class="container-fluid w-75">
+
+						<h3 class="contentAnchor text-center">
+							<b>Ford F-150</b>
+						</h3>
+
+
+
+						<div class="row my-3">
+							<a class="text-center" href="src/images/pickup2.jpg"
+								data-lightbox="plasma1" data-title="Plasma"><img
+								class="img-fluid w-75" src="src/images/pickup2.jpg"></a>
+						</div>
+						<div class="my-3 mx-auto row">
+							<a class="text-center col" href="src/images/pickup2-1.jpg"
+								data-lightbox="plasma1" data-title="Plasma"><img
+								class="img-fluid" src="src/images/pickup2-1.jpg"></a> <a
+								class="text-center col" href="src/images/pickup2-2.jpg"
+								data-lightbox="plasma1" data-title="Plasma"><img
+								class="img-fluid" src="src/images/pickup2-2.jpg"></a>
+						</div>
+						<hr>
+						<br>
+
+
+						<ul class="list-group mx-auto text-center">
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">Най-бюджетният
+								вариант.</li>
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">Възможност
+								за товар до 600кг</li>
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">Бърз</li>
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">5
+								места за пътници</li>
+						</ul>
+
+						<br> <br> <br>
+
+
+					</div>
+
+				</div>
+
+
+
+				<!-- 				Pickup 3 -->
+				<div id="pickup3" class="tab-pane fade bg-pickup-light">
+
+					<div class="container-fluid w-75">
+
+						<h3 class="contentAnchor text-center">
+							<b>Nissan Titan</b>
+						</h3>
+
+
+
+						<div class="row my-3">
+							<a class="text-center" href="src/images/pickup3.jpg"
+								data-lightbox="plasma1" data-title="Plasma"><img
+								class="img-fluid w-75" src="src/images/pickup3.jpg"></a>
+						</div>
+						<div class="my-3 mx-auto row">
+							<a class="text-center col" href="src/images/pickup3-1.jpg"
+								data-lightbox="plasma1" data-title="Plasma"><img
+								class="img-fluid" src="src/images/pickup3-1.jpg"></a> <a
+								class="text-center col" href="src/images/pickup3-2.jpg"
+								data-lightbox="plasma1" data-title="Plasma"><img
+								class="img-fluid" src="src/images/pickup3-2.jpg"></a>
+						</div>
+						<hr>
+						<br>
+
+
+						<ul class="list-group mx-auto text-center">
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">Най-бюджетният
+								вариант.</li>
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">Възможност
+								за товар до 600кг</li>
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">Бърз</li>
+							<li
+								class="list-group-item bg-primary text-light font-weight-bold">5
+								места за пътници</li>
+						</ul>
+
+						<br> <br> <br>
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+
+
+
+	<!-- 	Questions -->
+	<div class="container-fluid pickup-section" id="questions">
+		<div class="container-fluid w-75  bg-dark text-light p-4">
+			<div class="anchorBreak"></div>
+			<h1 class="display-3 text-center text-light">Често Задавани
+				Въпроси</h1>
+				<br>
+
+
+			<p class="text-center">
+				Може ли да се направи отстъпка за по-дълго ползване на автомобилите
+				? <br> Можете да позвъните и да се договорите за по-добра цена,
+				при ползване за срок повече от 1 ден.
+			</p>
+			
+			<br> <br>
+
+			<p class="text-center">
+				Може ли да се направи отстъпка за по-дълго ползване на автомобилите
+				? <br> Можете да позвъните и да се договорите за по-добра цена,
+				при ползване за срок повече от 1 ден.
+			</p>
+			
+			<br> <br>
+			
+			<p class="text-center">
+				Може ли да се направи отстъпка за по-дълго ползване на автомобилите
+				? <br> Можете да позвъните и да се договорите за по-добра цена,
+				при ползване за срок повече от 1 ден.
+			</p>
+			
+			<br> <br>
+
+		</div>
+	</div>
+
+
+
+
+	<!-- 	Contacts -->
+	<div class="container-fluid bg-pickup-light" id="contacts">
+		<div class="anchorBreak"></div>
+		<div class="container">
+			<h1 class="text-center display-3">Контакти</h1>
+			<div class="text-center">
+				<br> <br> <br>
+				<p>Телефон: 0881234567</p>
+				<p>Email: pickup-bg@gmail.com</p>
+			</div>
+		</div>
+
+	</div>
+	`
+
+
+	<script src="src/js/lightbox.js"></script>
+</body>
+</html>

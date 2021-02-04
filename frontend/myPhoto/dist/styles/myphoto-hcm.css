@@ -1,0 +1,29 @@
+.a11yhcm.enabled::after {
+	content: '✓';
+}
+
+.navbar-myphoto .navbar-nav>li>a:hover {
+background-color: #504747;
+color: yellow;
+}
+.navbar-myphoto .navbar-nav>li>a:focus {
+background-color: #504747;
+color: yellow;
+}
+.nav-link.active {
+background-color: #504747;
+color: yellow;
+}
+.navbar-myphoto .dropdown-menu>a:hover {
+background-color: #504747;
+color: yellow;
+}
+.navbar-myphoto .dropdown-menu>a:focus {
+background-color: #504747;
+color: yellow;
+}
+.navbar-myphoto .dropdown-menu>.active>a:focus {
+background-color: #504747;
+color: yellow;
+}
+

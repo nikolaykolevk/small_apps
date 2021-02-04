@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,
+shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>MyPhoto</title>
+<link rel="stylesheet"
+	href="bower_components/bootstrap4/dist/css
+/bootstrap.min.css">
+<link rel="stylesheet" href="styles/myphoto.css">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap4/dist/js/bootstrap.min.js"></script>
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet">
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("nav div ul li a").on('click', function(evt) {
+			evt.preventDefault();
+			$('html, body').animate({
+				scrollTop : $(this.hash).offset().top
+			}, 500);
+		});
+
+	});
+</script>
+
+</head>
+<body data-spy="scroll" data-target="#navbar">
+
+	<nav class="navbar navbar-expand-lg navbar-myphoto fixed-top"
+		id="navbar">
+		<a class="navbar-brand" href="#">MyPhoto</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav w-100">
+				<li class="nav-item"><a class="nav-link" id="ads"
+					href="#welcome"> Welcome</a></li>
+				<li class="nav-item"><a class="nav-link" href="#services">
+						Services</a></li>
+				<li class="nav-item"><a class="nav-link" href="#gallery">
+						Gallery</a></li>
+				<li class="nav-item"><a class="nav-link" href="#about">
+						About</a></li>
+				<li class="nav-item"><a class="nav-link" href="#contact">
+						Contact Us</a></li>
+				<li class="nav-item dropdown ml-auto"><a href="#"
+					class="nav-link dropdown-toggle" data-toggle="dropdown"
+					role="button" aria-haspopup="true" aria-expanded="false">
+						Profile <span class="caret"></span>
+				</a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a class="dropdown-item" href="#" data-toggle="modal"
+							data-target="#profile-modal"> <i class="fa fa-user"></i>
+							Profile
+						</a> <a class="dropdown-item" href="#" data-toggle="modal"
+							data-target="#settings-modal"> <i class="fa fa-cogs"></i>
+							Settings
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#"> <i class="fa fa-sign-out"></i>
+							Logout
+						</a>
+					</div></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="alert alert-myphoto alert-dismissible"
+		style="position: fixed; margin-top: 4em; width: 90%; margin-left: 4em;">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong class="alert-heading"><i class="fa fa-exclamation"></i>
+			Unsupported browser</strong>Internet Explorer 8 and lower are not supported by
+		this website.
+	</div>
+
+	<div class="modal" id="profile-modal" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="profile-modal-label">Profile</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">Profile</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="settings-modal" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="settings-modal-label">Settings</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">Settings</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<!-- HOME -->
+	<div class="container-fluid myphoto-section bg-myphoto-welcome"
+		id="welcome">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Welcome to MyPhoto</h1>
+				<p>Photographs you can cherish!</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- EVENTS -->
+	<div class="container-fluid myphoto-section bg-myphoto-dark"
+		id="services">
+		<ul class="nav nav-tabs nav-justified">
+			<li class="nav-item"><a href="#services-events"
+				data-toggle="tab" class="nav-link
+active">Events </a></li>
+			<li class="nav-item"><a href="#services-personal"
+				data-toggle="tab" class="nav-link"> Personal</a></li>
+			<li class="nav-item"><a href="#services-prints"
+				data-toggle="tab" class="nav-link"> Prints</a></li>
+		</ul>
+		<div class="tab-content bg-myphoto-light">
+			<div role="tabpanel" class="tab-pane active" id="services-events">
+				<div class="container">
+					<div class="row">
+						<p>Lorem Ipsum</p>
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="services-personal">
+				<div class="container">
+					<div class="row">
+						<p>Lorem Ipsum</p>
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="services-prints">
+				<div class="m-x-auto" style="width: 50%">
+					<h1 class="bg-primary text-xs-center">Special Offers</h1>
+				</div>
+				<div class="container">
+					<h1 class="hidden-lg-down">Our Print Sizes</h1>
+					<div class="row">
+						<div class="col-xs-6 col-sm-3 push-sm-3">
+							<h5 class="text-hide">Small</h5>
+							<div class="row">
+								<div class="col-sm-4 bg-info">
+									6x5
+									<div class="row">
+										<div class="col-sm-3 text-muted">€15</div>
+										<div class="col-sm-3 text-success">€8</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									8x10
+									<div class="row">
+										<div class="col-sm-3 text-muted">€18</div>
+										<div class="col-sm-3 text-success">€11</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									11x17
+									<div class="row">
+										<div class="col-sm-3 text-muted">€25</div>
+										<div class="col-sm-3 text-success">€20</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3 push-sm-3">
+							<h5 class="text-hide">Medium</h5>
+							<div class="row">
+								<div class="col-sm-4">
+									12x18
+									<div class="row">
+										<div class="col-sm-3 text-muted">€28</div>
+										<div class="col-sm-3 text-success">€23</div>
+									</div>
+								</div>
+								<div class="col-sm-4 bg-info">
+									16x20
+									<div class="row">
+										<div class="col-sm-3 text-muted">€35</div>
+										<div class="col-sm-3 text-success">€25</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									18x24
+									<div class="row">
+										<div class="col-sm-3 text-muted">€40</div>
+										<div class="col-sm-3 text-success">€32</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3 push-sm-3">
+							<h5 class="text-hide">Large</h5>
+							<div class="row">
+								<div class="col-sm-4 bg-info">
+									19x27
+									<div class="row">
+										<div class="col-sm-3 text-muted">€45</div>
+										<div class="col-sm-3 text-success">€30</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									20x30
+									<div class="row">
+										<div class="col-sm-3 text-muted">€48</div>
+										<div class="col-sm-3 text-success">€40</div>
+									</div>
+								</div>
+								<div class="col-md-4 bg-info">
+									22x28
+									<div class="row">
+										<div class="col-sm-3 text-muted">€55</div>
+										<div class="col-sm-3 text-success">€40</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3 pull-sm-9">
+							<h5 class="text-hide">Extra Large</h5>
+							<div class="row">
+								<div class="col-md-4">
+									24x36
+									<div class="row">
+										<div class="col-sm-3 text-muted">€60</div>
+										<div class="col-sm-3 text-success">€55</div>
+									</div>
+								</div>
+								<div class="col-md-4 bg-info">
+									27x39
+									<div class="row">
+										<div class="col-sm-3 text-muted">€75</div>
+										<div class="col-sm-3 text-success">€60</div>
+									</div>
+								</div>
+								<div class="col-md-4 bg-info">
+									27x40
+									<div class="row">
+										<div class="col-sm-3 text-muted">€75</div>
+										<div class="col-sm-3 text-success">€60</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bg-danger pull-xs-right">
+						<p class="label">Terms and Conditions Apply</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- GALLERY -->
+	<div class="container-fluid myphoto-section bg-myphoto-light"
+		id="gallery">
+		<div class="container-fluid myphoto-section bg-myphoto-light">
+			<div class="container">
+				<div class="row">
+					<h3>Gallery</h3>
+					<div id="gallery-carousel" class="carousel slide"
+						data-ride="carousel" data-interval="3000">
+						<div class="carousel-inner" role="listbox">
+							<div style="height: 400px" class="carousel-item active">
+								<img class="img-fluid" src="images/brazil.png">
+								<div class="carousel-caption">Brazil</div>
+							</div>
+							<div style="height: 400px" class="carousel-item">
+								<img class="img-fluid" src="images/datsun.png">
+								<div class="carousel-caption">Datsun 260Z</div>
+							</div>
+							<div style="height: 400px" class="carousel-item">
+								<img class="img-fluid" src="images/skydive.png">
+								<div class="carousel-caption">Skydive</div>
+							</div>
+						</div>
+						<a class="left carousel-control" href="#gallery-carousel"
+							role="button" data-slide="prev"> <span class="icon-prev"
+							aria-hidden="true"></span>
+						</a> <a class="right carousel-control" href="#gallery-carousel"
+							role="button" data-slide="next"> <span class="icon-next"
+							aria-hidden="true"></span>
+						</a>
+						<ol class="carousel-indicators">
+							<li data-target="#gallery-carousel" data-slideto="
+0"
+								class="active"></li>
+							<li data-target="#gallery-carousel" data-slideto="
+1"></li>
+							<li data-target="#gallery-carousel" data-slideto="
+2"></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- ABOUT -->
+	<div class="container-fluid myphoto-section bg-myphoto-dark" id="about">
+		<div class="container-fluid myphoto-section bg-myphoto-dark">
+			<div class="container">
+				<div class="row">
+					<h3>About</h3>
+					<div class="card bg-myphoto-light">
+						<div class="card-block">
+							<p>The style of photography will be customised to your
+								personal preference, as if being shot from your own eyes. You
+								will be part of every step of the photography process, to ensure
+								these photos feel like your own.</p>
+							<p>Our excellent photographers have many years of experience,
+								capturing moments from weddings to sporting events of absolute
+								quality.</p>
+							<p>MyPhoto also provides superb printing options of all
+								shapes and sizes, on any canvas, in any form. From large canvas
+								prints to personalised photo albums, MyPhoto provides it all.</p>
+							<p>MyPhoto provides a full, holistic solution for all your
+								photography needs.</p>
+
+							<blockquote class="blockquote">
+								<p>I am very motivated today.</p>
+								<footer class="blockquote-footer">
+									The Founder, <cite>Times Magazine</cite>
+								</footer>
+							</blockquote>
+
+							<div class="media">
+								<img class="mr-3" src="images/jason.jpg"
+									alt="Generic placeholder image">
+								<div class="media-body">
+									<h5 class="mt-0">Jason</h5>
+									Some text about Jason, our photographer. Aeterno meliore has
+									ut, sed ad. Tollit volumus mea id, sed dicunt aliquando cu. Ea
+									reque dmedsimilique deseruisse duo Est te essent argumentum,
+									mea et error tritani eleifend. Eum appellantur intellegebat at,
+									ne graece repudiandae vituperatoribus duo.
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- CONTACT -->
+	<div class="container-fluid myphoto-section bg-myphoto-light"
+		id="contact">
+		<div class="container">
+			<div class="row">
+				<h3>Contact Us</h3>
+				<p>Lorem ipsum dolor sit amet, modo integre ad est, omittam
+					temporibus ex sit, dicam molestie eum ne. His ad nonumy mentitum
+					offendit, ea tempor timeam nec, doming latine liberavisse his ne.
+					An vix movet dolor. Ut pri qualisque reprehendunt, altera insolens
+					torquatos in per. Mei veri omnium omittam at, ea qui discere
+					ceteros.</p>
+				<form class="w-100">
+					<div class="form-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<span><i class="fa fa-user"> </i></span>
+							</div>
+
+							<input type="text" class="form-control" placeholder="Your name">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<span><i class="fa fa-at"> </i></span>
+							</div>
+							<input type="text" class="form-control is-invalid"
+								placeholder="Your email address">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="name">Your message</label>
+						<textarea class="form-control" rows="5" id="message">
+</textarea>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-success">
+							<i class="fa fa-send-o"></i> Send
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<footer class="footer text-xs-center">
+		<p class="text-muted">
+			<small>&copy; MyPhoto Inc.</small>
+		</p>
+		<p class="text-muted">
+			<a href="#"><small>Terms &amp; Conditions</small> </a>
+		</p>
+		<p class="text-muted">
+			<a href="#"><small>About Us</small></a>
+		</p>
+	</footer>
+
+
+
+</body>
+</html>

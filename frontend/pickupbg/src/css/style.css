@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: arima-madurai;
+  src: url(../fonts/ArimaMadurai-Regular.otf);
+}
+
+h1, h2, h3, h4, h5, h6, .nav, .navbar {
+	font-family: 'arima-madurai';
+}
+
+h1.display-3 {
+    font-size: 7vh;
+}
+
+p, #pickup1 > div > ul > li, #pickup2 > div > ul > li, #pickup3 > div > ul > li {
+	font-size: 2.5vh;
+}
+
+body {
+	font-family: 'Lato', cursive;
+}
+
+tr > th, tr > td {
+	vertical-align: middle;
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+.pickup-section {
+	min-height: 750px;
+	background-size: cover;
+	background-repeat:no-repeat;
+	background-position: center center;
+	color: #504747;
+}
+
+.bg-pickup-dark {
+	background-color: #504747;
+	color: white;
+}
+
+.bg-pickup-light {
+	background-color: white;
+	color: #504747;
+}
+
+#welcome {
+	background-image: url('../images/welcomeBG.jpg');
+}
+
+#questions {
+	background-image: url('../images/questionsBG.jpg')
+}
+
+#contacts {
+	min-height: 350px;
+}
+
+#welcome > div.container.mt-5 > div, #content > div.bg-pickup-light.mt-4.p-3.row.w-75.mx-auto.row, #questions > div {
+	opacity: 90%;
+	font-weight: bold;
+}
+
+.bg-pickup-dark .nav-tabs a {
+	color: white;
+}
+
+.navbar-pickup {
+	background-color: #2A2A2C;
+	border-color: black;
+	border-radius: 0;
+	margin-bottom: 0px;
+}
+
+a.navbar-brand {
+	color: white;
+	font-weight: bold;
+}
+
+a.nav-link {
+	color: white;
+}
+
+.navbar-pickup .navbar-nav>li>a:hover {
+	background-color: #504747;
+}
+
+.navbar-pickup .navbar-nav>li>a:focus {
+	color: white;
+}
+
+.nav-link.active {
+	background-color: #504747;
+	color: white;
+}
+
+.navbar-pickup .dropdown-menu {
+	background-color: #504747;
+	border-color: black;
+}
+
+.navbar-pickup .dropdown-menu>a {
+	color: white;
+	background-color: #504747;
+}
+
+.navbar-pickup .dropdown-menu>a:hover, .navbar-pickup .dropdown-menu>a:focus,
+	.navbar-pickup .dropdown-menu>.active>a:focus {
+	color: gray;
+	background-color: #504747;
+}
+
+.navbar-toggler {
+	color: white;
+}
+
+.contentAnchor {
+	padding-top: 70px;	
+}
+
+.anchorBreak {
+	height: 55.6px;
+}

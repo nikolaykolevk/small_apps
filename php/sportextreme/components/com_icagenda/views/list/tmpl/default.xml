@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+
+	<layout title="COM_ICAGENDA_LIST_VIEW_DEFAULT_TITLE">
+		<message>COM_ICAGENDA_LIST_VIEW_DEFAULT_DESC</message>
+	</layout>
+
+	<fields
+		name="params"
+		type="fields"
+		label="params"
+		id="params"
+		addfieldpath="/administrator/components/com_icagenda/models/fields"
+		>
+
+		<fieldset
+			name="ICAGENDA"
+			label="COM_ICAGENDA_MENU_OPTIONS"
+			addfieldpath="/administrator/components/com_icagenda/assets/elements"
+			>
+
+			<field type="Title" label="COM_ICAGENDA_LOGO" class="styleblanck" />
+
+			<field
+				name="template"
+				type="modal_template"
+				label="COM_ICAGENDA_THEME_PACK_LBL"
+				description="COM_ICAGENDA_THEME_PACK_DESC"
+				default="default"
+				class="inputbox"
+				size="40"
+			/>
+
+			<field type="Title" label="COM_MENUS_FILTER_FIELDSET_LABEL" class="stylebox lead input-xxlarge" />
+
+			<field
+				name="mcatid"
+				type="modal_multicat"
+				label="COM_ICAGENDA_LBL_CATEGORY"
+				description="COM_ICAGENDA_DESC_CATEGORY"
+				default="0"
+				class="inputbox"
+				multiple="multiple"
+			/>
+
+			<field
+				name="time"
+				type="list"
+				label="COM_ICAGENDA_TIME_LBL"
+				description="COM_ICAGENDA_TIME_DESC"
+				default=""
+				class="inputbox"
+				>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="2">COM_ICAGENDA_OPTION_PAST_EVENTS</option>
+				<option value="4">COM_ICAGENDA_OPTION_CURRENT_EVENTS_TODAY_EVENTS</option>
+				<option value="1">COM_ICAGENDA_OPTION_CURRENT_EVENTS_TODAY_AND_UPCOMING_EVENTS</option>
+				<option value="3">COM_ICAGENDA_OPTION_UPCOMING_EVENTS</option>
+				<option value="0">COM_ICAGENDA_OPTION_ALL_EVENTS</option>
+			</field>
+
+			<field
+				name="orderby"
+				type="list"
+				label="COM_ICAGENDA_LBL_DATE"
+				description="COM_ICAGENDA_DESC_DATE"
+				default=""
+				>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">COM_ICAGENDA_DATE_DESC</option>
+				<option value="2">COM_ICAGENDA_DATE_ASC</option>
+			</field>
+
+			<field
+				name="datesDisplay"
+				type="radio"
+				label="COM_ICAGENDA_LIST_TYPE_LBL"
+				description="COM_ICAGENDA_LIST_TYPE_DESC"
+				default=""
+				class="btn-group"
+				onchange="icalert()"
+				>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="1">JYES</option>
+				<option value="2">JNO</option>
+			</field>
+
+			<field
+				name="eventsfile_error"
+				type="modal_icalert_msg"
+				label="COM_ICAGENDA_THEME_PACKS_COMPATIBILITY"
+				description="COM_ICAGENDA_ALERT_EVENTS_FILE_MISSING_DESC"
+			/>
+
+			<field
+				name="features_filter"
+				type="sql"
+				label="COM_ICAGENDA_FORM_LBL_EVENT_FEATURES"
+				description="COM_ICAGENDA_FORM_DESC_EVENT_FEATURES_FILTER"
+				class="inputbox"
+				query="SELECT id AS value, title AS features_filter FROM #__icagenda_feature WHERE state=1 AND show_filter=1 ORDER BY features_filter"
+				multiple="true"
+			/>
+
+			<field
+				name="features_incl_excl"
+				type="radio"
+				label="COM_ICAGENDA_MENU_EVENT_FEATURES_INCLUDE_EXCLUDE_LBL"
+				description="COM_ICAGENDA_MENU_EVENT_FEATURES_INCLUDE_EXCLUDE_DESC"
+				default="1"
+				class="btn-group"
+				>
+				<option value="1">COM_ICAGENDA_MENU_EVENT_FEATURES_INCLUDE</option>
+				<option value="0">COM_ICAGENDA_MENU_EVENT_FEATURES_EXCLUDE</option>
+			</field>
+
+			<field
+				name="features_any_all"
+				type="radio"
+				label="COM_ICAGENDA_MENU_EVENT_FEATURES_ALL_OR_ANY_LBL"
+				description="COM_ICAGENDA_MENU_EVENT_FEATURES_ALL_OR_ANY_DESC"
+				default="1"
+				class="btn-group"
+				>
+				<option value="1">COM_ICAGENDA_MENU_EVENT_FEATURES_ANY_ONE_FEATURE</option>
+				<option value="2">COM_ICAGENDA_MENU_EVENT_FEATURES_ALL_FEATURES_REQUIRED</option>
+			</field>
+
+			<field type="Title" label=" " class="stylenote" />
+
+			<field
+				type="TitleImg"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_FRONTEND"
+				class="stylebox lead input-xxlarge hidden-j25"
+				labelclass="hidden-j25"
+				icicon="bi-color-header"
+			/>
+
+			<field
+				name="search_filters"
+				type="radio"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_FRONTEND_LBL"
+				description="COM_ICAGENDA_LIST_SEARCH_FILTERS_FRONTEND_DESC"
+				default=""
+				class="btn-group hidden-j25"
+				labelclass="hidden-j25"
+				useglobal="true"
+				>
+				<option value="0">JDISABLED</option>
+				<option value="1">JENABLED</option>
+			</field>
+
+			<field
+				name="filters_mode"
+				type="list"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_MODE_LBL"
+				description="COM_ICAGENDA_LIST_SEARCH_FILTERS_MODE_DESC"
+				default=""
+				class="btn-group hidden-j25"
+				labelclass="hidden-j25"
+				useglobal="true"
+				showon="search_filters:1"
+				>
+				<option value="1">COM_ICAGENDA_LIST_SEARCH_FILTERS_MODE_CURRENT_LIST</option>
+				<option value="2">COM_ICAGENDA_LIST_SEARCH_FILTERS_MODE_GLOBAL_LIST</option>
+			</field>
+
+			<field
+				name="filters_display"
+				type="list"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_DISPLAY_LBL"
+				description="COM_ICAGENDA_LIST_SEARCH_FILTERS_DISPLAY_DESC"
+				default=""
+				class="btn-group hidden-j25"
+				labelclass="hidden-j25"
+				useglobal="true"
+				showon="search_filters:1"
+				>
+				<option value="2">COM_ICAGENDA_RESPONSIVE</option>
+				<option value="1">COM_ICAGENDA_FULL_WIDTH</option>
+			</field>
+
+			<field
+				name="filters_label"
+				type="radio"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_LABEL_LBL"
+				description="COM_ICAGENDA_LIST_SEARCH_FILTERS_LABEL_DESC"
+				default=""
+				class="btn-group hidden-j25"
+				labelclass="hidden-j25"
+				useglobal="true"
+				showon="search_filters:1"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field
+				name="filter_search"
+				type="hidden"
+				rendertype="radio"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_SEARCH_LBL"
+				description=""
+				default=""
+				class="btn-group hidden-j25"
+				labelclass="control-label hidden-j25"
+				useglobal="true"
+				showon="search_filters:1"
+				>
+				<option value="0">JHIDE</option>
+				<option value="2">JSHOW</option>
+			</field>
+
+			<field
+				name="filter_from"
+				type="hidden"
+				rendertype="radio"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_FROM_LBL"
+				description=""
+				default=""
+				class="btn-group hidden-j25"
+				labelclass="control-label hidden-j25"
+				useglobal="true"
+				showon="search_filters:1"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field
+				name="filter_to"
+				type="hidden"
+				rendertype="radio"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_TO_LBL"
+				description=""
+				default=""
+				class="btn-group hidden-j25"
+				labelclass="control-label hidden-j25"
+				useglobal="true"
+				showon="search_filters:1"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field
+				name="filter_category"
+				type="hidden"
+				rendertype="radio"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_CATEGORY_LBL"
+				description=""
+				default=""
+				class="btn-group hidden-j25"
+				labelclass="control-label hidden-j25"
+				useglobal="true"
+				showon="search_filters:1"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field
+				name="filter_month"
+				type="hidden"
+				rendertype="radio"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_MONTH_LBL"
+				description=""
+				default=""
+				class="btn-group hidden-j25"
+				labelclass="control-label hidden-j25"
+				useglobal="true"
+				showon="search_filters:1"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field
+				name="filter_year"
+				type="hidden"
+				rendertype="radio"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_YEAR_LBL"
+				description=""
+				default=""
+				class="btn-group hidden-j25"
+				labelclass="control-label hidden-j25"
+				useglobal="true"
+				showon="search_filters:1"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field
+				name="filter_ordering"
+				type="ic.sortablefields"
+				label="COM_ICAGENDA_LIST_SEARCH_FILTERS_LBL"
+				description="COM_ICAGENDA_LIST_SEARCH_FILTERS_DESC"
+				class="alert alert-info input-xxlarge hidden-j25"
+				default="filter_search,filter_from,filter_to,filter_category,filter_month,filter_year"
+				showon="search_filters:1"
+			/>
+
+			<field type="Title" label="COM_MENUS_VIEW_FIELDSET_LABEL" class="stylebox lead input-xxlarge" />
+
+			<field
+				name="displayCatDesc_menu"
+				type="modal_icmulti_opt"
+				label="COM_ICAGENDA_DISPLAY_CATINFOS_LABEL"
+				description="COM_ICAGENDA_DISPLAY_CATINFOS_DESC"
+				default=""
+			/>
+
+			<field
+				name="displayCatDesc_checkbox"
+				type="modal_icmulti_checkbox"
+				label=" "
+				class="checkbox"
+				labelclass="control-label"
+			/>
+
+			<field
+				name="number"
+				type="text"
+				label="COM_ICAGENDA_LBL_NUMERO"
+				description="COM_ICAGENDA_DESC_NUMERO"
+				default="5"
+				class="inputbox"
+				size="5"
+				filter="integer"
+				validate="ic.positiveinteger"
+			/>
+
+			<field type="Title" label="COM_ICAGENDA_LBL_FORMAT" class="styleblanck" />
+
+			<field
+				name="format"
+				type="iclist_globalization"
+				label="COM_ICAGENDA_LBL_FORMAT"
+				description="COM_ICAGENDA_LBL_FORMAT"
+				default=""
+				class="inputbox"
+			/>
+
+			<field
+				name="date_separator"
+				type="text"
+				label="COM_ICAGENDA_LBL_DATE_SEPARATOR"
+				description="COM_ICAGENDA_DESC_DATE_COMPONENTS_SEPARATOR"
+				default=""
+				class="inputbox"
+				size="5"
+			/>
+
+			<field
+				type="TitleImg"
+				label="COM_ICAGENDA_DATE_FORMAT_NOTE1"
+				class="stylenote alert alert-info input-xxlarge"
+				icimage="info.png"
+			/>
+
+			<field
+				type="TitleImg"
+				label="COM_ICAGENDA_DATE_FORMAT_NOTE2"
+				class="stylenotep alert alert-block input-xxlarge"
+				icimage="blanck.png"
+			/>
+
+			<field type="Title" label="IC_AUTO_INTROTEXT" class="styleblanck" />
+
+			<field
+				name="limitGlobal"
+				type="radio"
+				label="COM_ICAGENDA_LBL_LIMIT"
+				description="COM_ICAGENDA_DESC_LIMIT"
+				default="1"
+				class="btn-group"
+				>
+				<option value="1">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">COM_ICAGENDA_LBL_CUSTOM_VALUE</option>
+			</field>
+
+			<field
+				name="limit"
+				type="text"
+				label="COM_ICAGENDA_LBL_CUSTOM_VALUE"
+				description="COM_ICAGENDA_DESC_CUSTOM_VALUE"
+				default=""
+				class="inputbox input-mini"
+				size="5"
+				filter="integer"
+			/>
+
+			<field type="Title" label=" " class="stylenote" />
+
+			<field type="Title" label="COM_ICAGENDA_LEGEND_GOOGLE_MAPS" class="styleblanck" />
+
+			<field
+				name="m_width"
+				type="text"
+				label="COM_ICAGENDA_LBL_MWIDTH"
+				description="COM_ICAGENDA_DESC_MWIDTH"
+				default="100%"
+				class="inputbox"
+				size="5"
+			/>
+
+			<field
+				name="m_height"
+				type="text"
+				label="COM_ICAGENDA_LBL_MHEIGHT"
+				description="COM_ICAGENDA_DESC_MHEIGHT"
+				default="300px"
+				class="inputbox"
+				size="5"
+			/>
+
+			<field type="Title" label="COM_ICAGENDA_FOOTER" class="styleblanck input-xxlarge" />
+
+		</fieldset>
+	</fields>
+</metadata>

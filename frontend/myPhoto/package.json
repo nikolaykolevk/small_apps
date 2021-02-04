@@ -1,0 +1,15 @@
+{
+  "name": "MyPhoto",
+  "version": "1.0",
+  "devDependencies": {
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-processhtml": "^0.4.2",
+    "grunt-uncss": "^0.9.0"
+  },
+  "dependencies": {
+    "angular": "^1.7.8"
+  }
+}

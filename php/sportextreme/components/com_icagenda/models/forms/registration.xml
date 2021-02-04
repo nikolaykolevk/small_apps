@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+
+	<!-- Core & Custom Fields -->
+	<fieldset
+		name="default"
+		label=""
+		addfieldpath="/administrator/components/com_icagenda/models/fields"
+		>
+
+		<field
+			name="uid"
+			type="hidden"
+			label="ICAGENDA_REGISTRATION_FORM_USERID"
+			description="ICAGENDA_REGISTRATION_FORM_USERID_DESC"
+		/>
+
+		<field
+			name="name"
+			type="text"
+			label="ICAGENDA_REGISTRATION_FORM_NAME"
+			description="ICAGENDA_REGISTRATION_FORM_NAME_DESC"
+			size="30"
+			filter="username"
+			required="true"
+		/>
+
+		<field
+			name="email"
+			type="email"
+			label="ICAGENDA_REGISTRATION_FORM_EMAIL"
+			description="ICAGENDA_REGISTRATION_FORM_EMAIL_DESC"
+			size="30"
+			field="id"
+			filter="string"
+			validate="email"
+		/>
+
+		<field
+			name="email2"
+			type="email"
+			label="IC_FORM_EMAIL_CONFIRM_LBL"
+			size="30"
+			field="email"
+			filter="string"
+			message="COM_ICAGENDA_FORM_VALIDATE_FIELD_EMAIL2_MESSAGE"
+			validate="equals"
+			hint="IC_FORM_EMAIL_CONFIRM_HINT"
+		/>
+
+		<field
+			name="phone"
+			type="tel"
+			label="ICAGENDA_REGISTRATION_FORM_PHONE"
+			description="ICAGENDA_REGISTRATION_FORM_PHONE_DESC"
+			size="30"
+		/>
+
+		<field
+			name="date"
+			type="icagenda.registrationdates"
+			label="ICAGENDA_REGISTRATION_FORM_DATE"
+			description="ICAGENDA_REGISTRATION_FORM_DATE_DESC"
+		/>
+
+		<field
+			name="period"
+			type="hidden"
+		/>
+
+		<field
+			name="people"
+			type="icagenda.registrationpeople"
+			label="ICAGENDA_REGISTRATION_FORM_PEOPLE"
+			description="ICAGENDA_REGISTRATION_FORM_PEOPLE_DESC"
+		/>
+
+		<field
+			name="custom_fields"
+			type="hidden"
+		/>
+
+	</fieldset>
+
+
+	<!-- Temporary Fields (to be migrated above) -->
+	<fieldset name="temporary" label="" >
+
+		<field
+			name="notes"
+			type="textarea"
+			label="ICAGENDA_REGISTRATION_FORM_NOTES"
+			description=""
+			cols="60"
+			rows="10"
+			class="row-fluid"
+			hint="ICAGENDA_REGISTRATION_FORM_NOTES_DESC"
+			filter="safehtml"
+		/>
+
+	</fieldset>
+
+
+	<!-- Privacy Fields (in dev.) -->
+	<fields name="consent" label="COM_ICAGENDA_REGISTRATION_CONSENT_PERSONAL_DATA_LEGEND">
+
+		<!--field type="note" name="consent_label" label="Your Personnal Data Privacy" description="blablabla blablabla..." class="controls"/>
+		<field
+			name="consent_visibility"
+			type="radio"
+			label="Who can see your personal data?"
+			description="COM_ICAGENDA_PRIVACY_VISIBILITY_DESC"
+			message="COM_ICAGENDA_PRIVACY_VISIBILITY_DESC"
+			required="true"
+			>
+			<option value="public">COM_ICAGENDA_PRIVACY_VISIBILITY_PUBLIC</option>
+			<option value="user">COM_ICAGENDA_PRIVACY_VISIBILITY_USERS</option>
+			<option value="participant">COM_ICAGENDA_PRIVACY_VISIBILITY_PARTICIPANTS</option>
+			<option value="private">COM_ICAGENDA_PRIVACY_VISIBILITY_PRIVATE</option>
+		</field>
+
+		<field
+			name="consent_visibility2"
+			type="list"
+			label="Who can see your personal data?"
+			description="COM_ICAGENDA_PRIVACY_VISIBILITY_DESC"
+			message="COM_ICAGENDA_PRIVACY_VISIBILITY_DESC"
+			required="true"
+			>
+			<option value="" disabled="disabled">Who should see this?</option>
+			<option value="public">Public</option>
+			<option value="user">Website Members</option>
+			<option value="participant">Event Participants</option>
+			<option value="private">Anonymous (only organisers and administrators)</option>
+		</field>
+
+		<field
+			name="note_public"
+			type="note"
+			label="Public Visibility"
+			description="COM_ICAGENDA_REGISTRATION_PUBLIC_CONSENT_NOTE"
+			class="alert alert-info"
+			showon="consent_visibility:public"
+		/>
+
+		<field
+			name="note_users"
+			type="note"
+			description="COM_ICAGENDA_REGISTRATION_WEBSITE_USERS_CONSENT_NOTE"
+			class="alert alert-info"
+			showon="consent_visibility:user"
+		/>
+
+		<field
+			name="note_participants"
+			type="note"
+			description="COM_ICAGENDA_REGISTRATION_PARTICIPANTS_CONSENT_NOTE"
+			class="alert alert-info"
+			showon="consent_visibility:participant"
+		/>
+
+		<field
+			name="note_private"
+			type="note"
+			description="COM_ICAGENDA_REGISTRATION_PRIVATE_CONSENT_NOTE"
+			class="alert alert-info"
+			showon="consent_visibility:private"
+		/>
+
+		<field
+			name="note_extra"
+			type="note"
+			description="COM_ICAGENDA_REGISTRATION_EXTRA_CONSENT_NOTE"
+			class=""
+			showon="consent_visibility:public,user,participant"
+		/>
+
+		<field
+			name="consent_email"
+			type="checkboxes"
+			label=""
+			showon="consent_visibility:public,user,participant"
+			>
+			<option value="email">Email</option>
+		</field>
+
+		<field
+			name="consent_personal"
+			type="checkboxes"
+			label=""
+			showon="consent_visibility:public,user,participant"
+			>
+			<option value="personal">Other personal data submitted</option>
+		</field>
+
+		<field
+			name="consent_gravatar"
+			type="checkboxes"
+			label=""
+			showon="consent_visibility:public,user,participant"
+			>
+			<option value="gravatar">COM_ICAGENDA_PRIVACY_GRAVATAR_CONSENT</option>
+		</field>
+
+		<field
+			name="consent_visibility_info"
+			type="checkboxes"
+			label=""
+			message="Select the visibility for your information on this website"
+			showon="consent_visibility:public,user,participant"
+			>
+			<option value="email">Email</option>
+			<option value="personal">Other personal data submitted</option>
+			<option value="gravatar">COM_ICAGENDA_PRIVACY_GRAVATAR_CONSENT</option>
+		</field>
+
+		<field
+			name="consent_visibility_info"
+			type="hidden"
+			showon="consent_visibility:private"
+			default="none"
+		/>
+
+		<field
+			name="consent_visibility3"
+			type="checkboxes"
+			label="Your Personal Data"
+			required="true"
+			>
+			<option value="1">Your name is public. We'll use your email address to send you updates.</option>
+		</field-->
+
+
+		<field
+			name="consent_name_public"
+			type="checkboxes"
+			label="COM_ICAGENDA_REGISTRATION_CONSENT_NAME_LABEL"
+			description="COM_ICAGENDA_REGISTRATION_CONSENT_NAME_DESC"
+			class="ic-checkboxes-option"
+			>
+			<option value="public">COM_ICAGENDA_REGISTRATION_CONSENT_NAME</option>
+		</field>
+
+		<field
+			name="consent_name_users"
+			type="checkboxes"
+			label="COM_ICAGENDA_REGISTRATION_CONSENT_NAME_LABEL"
+			description="COM_ICAGENDA_REGISTRATION_CONSENT_NAME_USERS_DESC"
+			class="ic-checkboxes-option"
+			>
+			<option value="users">COM_ICAGENDA_REGISTRATION_CONSENT_NAME_USERS</option>
+		</field>
+
+
+		<field
+			name="consent_gravatar"
+			type="checkboxes"
+			label="COM_ICAGENDA_REGISTRATION_CONSENT_GRAVATAR_LABEL"
+			class="ic-checkboxes-option"
+			>
+			<option value="gravatar">COM_ICAGENDA_REGISTRATION_CONSENT_GRAVATAR</option>
+		</field>
+
+		<field
+			name="consent_organiser"
+			type="checkboxes"
+			label="COM_ICAGENDA_REGISTRATION_CONSENT_ORGANISER_LABEL"
+			description="COM_ICAGENDA_REGISTRATION_CONSENT_ORGANISER_DESC"
+			required="true"
+			class="ic-checkboxes-option"
+			>
+			<option value="organiser">COM_ICAGENDA_REGISTRATION_CONSENT_ORGANISER</option>
+		</field>
+
+		<field
+			name="consent_terms"
+			type="icagenda.terms"
+			label="COM_ICAGENDA_REGISTRATION_CONSENT_TERMS_LABEL"
+			required="true"
+			>
+			<option value="terms">COM_ICAGENDA_REGISTRATION_CONSENT_TERMS</option>
+		</field>
+
+	</fields>
+
+
+	<!-- Extra Fields (to be reviewed...) -->
+	<fieldset name="extra" label="" >
+
+		<!--field
+			name="terms"
+			type="icagenda.registrationterms"
+			label="COM_ICAGENDA_TERMS_AND_CONDITIONS"
+			id="terms"
+			required="true"
+			message="COM_ICAGENDA_TERMS_AND_CONDITIONS_NOT_CHECKED_REGISTRATION"
+		/-->
+
+		<field
+			name="captcha"
+			type="captcha"
+			label="COM_ICAGENDA_CAPTCHA_LABEL"
+			validate="captcha"
+			namespace="registration"
+		/>
+
+	</fieldset>
+
+
+	<!-- Hidden Fields -->
+	<fieldset name="hidden" label="" >
+
+		<field
+			name="eventid"
+			type="hidden"
+		/>
+
+		<field
+			name="menuid"
+			type="hidden"
+		/>
+
+	</fieldset>
+
+
+	<fieldset name="control" label="" >
+
+		<field
+			name="typeReg"
+			type="hidden"
+		/>
+
+		<field
+			name="current_url"
+			type="hidden"
+		/>
+
+		<field
+			name="max_nb_of_tickets"
+			type="hidden"
+		/>
+	</fieldset>
+
+</form>
